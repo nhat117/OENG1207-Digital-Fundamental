@@ -3,7 +3,6 @@
 % This assignment submission is my own, original work.
 % Simple Unit Conversion Program
 
-
 %% Temperature conversion
 %% F->C
 clc, clearvars, close all

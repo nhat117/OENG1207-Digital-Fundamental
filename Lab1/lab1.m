@@ -8,7 +8,7 @@ v0_ms = sqrt((d * g) / sin(2 * theta_rad)); % the unit is in m/s;
 v0_kmh = convvel(v0_ms, 'm/s', 'km/h');
 fprintf('The initial velocity is %.3f km/h', v0_kmh);
 
-%% Week3 
+%% Week3
 clc, clearvars, close all
 
 g = 9.8; % Gravitational velocity in m/s^2
@@ -35,8 +35,9 @@ y = h_initial + v0_max .* t .* sin(theta_rad)' - 0.5 * g * (t .^ 2);
 
 % Plot the trajectory
 figure(1)
-for i = 1:size(theta_rad,2) % Loop through all angles
-    plot(x(i,:), y(i,:))
+
+for i = 1:size(theta_rad, 2) % Loop through all angles
+    plot(x(i, :), y(i, :))
     hold on
 end
 
@@ -44,6 +45,5 @@ end
 legend('33 degree', '45 degree', '55 degree');
 axis([0 210 0 140]); % define the range for the axis, use positive range only
 title('Height vs Distance respective to time for different launching angle'); % title name for the graph
-xlabel('Distance in meters'); 
+xlabel('Distance in meters');
 ylabel('Height in meters'); % label name for x, y axis
-
