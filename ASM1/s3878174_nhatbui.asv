@@ -2,16 +2,15 @@
 % Student: Bui Minh Nhat-s3878174
 % This assignment submission is my own, original work.
 % Simple Unit Conversion Program
-%% Start
-% The program start at this section
+%% Start here 
 clc, clearvars, close all
-disp('OENG1207 Digital Fundamentals - Individual Project Milestone') % Display program title
+disp('OENG1207 Digital Fundamentals - Individual Project Milstone') % Display program title
 disp('Welcome to Simple Unit Conversion Program')
 disp('Author: Bui Minh Nhat- s3878174')
 disp('------------------------------')
 disp('Quick start guide : ')
 disp('1.To use the program, select the desire section and press run section button in the toolbar of matlab')
-disp('2.To view the full instruction, run the instruction section')
+disp('2.To view the instruction, run the instruction section')
 disp('3.If you would like to quit the program, select the matlab Command Window and press Ctrl + C')
 disp('** The result are display with the accuracy of 2 decimal point')
 disp('------------------------------')
