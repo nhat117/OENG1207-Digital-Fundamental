@@ -2,8 +2,9 @@
 % Student: Bui Minh Nhat-s3878174
 % This assignment submission is my own, original work.
 % Simple Unit Conversion Program
+
+% Main program start here
 %% Start
-% The program start at this section
 %Display program title and quick start guide
 clc, clearvars, close all
 disp('OENG1207 Digital Fundamentals - Individual Project Milestone - Dr Alexandru C. Fechete');
