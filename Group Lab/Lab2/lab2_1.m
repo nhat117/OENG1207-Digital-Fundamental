@@ -53,10 +53,7 @@ end
 
 if status == 0 % Check if the program encounter any error
     % Display the original image
-    figure(1)
-    title('Image transformation')
-    subplot(1, 2, 1)
-    imshow(rgb)
+    figure(1),subplot(1, 2, 1),title('Original'),imshow(rgb)
     % Change the color to black
     fprintf('Changing the %s color in the picture to black \n', color_change)
     disp('Please wait...')
@@ -68,7 +65,5 @@ if status == 0 % Check if the program encounter any error
         end
     end
     % Display the transform image
-    figure(1)
-    subplot(1, 2, 2)
-    imshow(rgb)
+    figure(1),subplot(1, 2, 2),title('Transform Image'),imshow(rgb)
 end

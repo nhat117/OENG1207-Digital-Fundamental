@@ -1,0 +1,27 @@
+clc, clearvars, close all
+% User prompt and instructions
+display('Welcome to Color Changing Program')
+display('This program will change the color you choose to black')
+display('The color you can choose are : red, blue, green, magenta, cyan, white, orange, yellow, and black')
+display('To quit the program press ctrl + c')
+display('---------------------------------------------------------------------')
+% input_image = ('Please enter image path: ', 's')
+color_change = lower(input('Please enter a color in the above list to change it to black :', 's')); % Get input color and convert it to lower case
+% rgb = imread(input_image)
+rgb = imread("coloredChips.png");
+% Convert RGB image to chosen color space
+[rgb, status_res] = image_handler(rgb, color_change);
+
+
+
+% if status == -1
+%     display('The color you entered is not in the list')
+% else
+%     % Display the result
+%     figure(1), imshow(rgb), title('Original');
+% %     figure(1), imshow(rgb_copy), title('Result');
+% %     display('The result is saved in result.png')
+% %     imwrite(rgb_copy, 'result.png');
+% end
+
+
