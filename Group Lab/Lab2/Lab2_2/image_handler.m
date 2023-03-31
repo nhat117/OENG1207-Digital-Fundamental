@@ -1,5 +1,5 @@
 function [rgb_res, status_res] = image_handler(rgb, color_input)
-    %IMAGE_HANDLER Summary of this function goes here
+    %IMAGE_HANDLER Function take in the rgb image and color input, and replace that  with black
     %   Detailed explanation goes here
     row_size = size(rgb, 1); % Get the row size of the image
     col_size = size(rgb, 2); % Get the column size of the image
