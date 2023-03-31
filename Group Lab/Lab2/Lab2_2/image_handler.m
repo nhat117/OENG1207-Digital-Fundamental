@@ -28,8 +28,8 @@ function [rgb_res, status_res] = image_handler(rgb, color_input)
             dest = cyan;
         case 'white'
             dest = white;
-        case 'orange'
-            dest = orange;
+%         case 'orange'
+%             dest = orange;
         case 'yellow'
             dest = yellow;
         case 'black'
@@ -37,7 +37,6 @@ function [rgb_res, status_res] = image_handler(rgb, color_input)
         case 'quit'
             status = -2; % The program encounter quit command
         otherwise % invalid respose handling
-            disp('Invalid color, the program will exit now')
             status = -1; % The program encounter error
     end
 
