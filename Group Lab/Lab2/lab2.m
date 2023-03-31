@@ -1,8 +1,12 @@
 clc, clearvars, close all
-% Read the image
-display('Welcome to color changing program')
+% User prompt and instructions
+display('Welcome to Color Changing Program')
+display('This program will change the color you choose to black')
+display('The color you can choose are : red, blue, green, magenta, cyan, white, orange, yellow, and black')
+display('To quit the program press ctrl + c')
+display('---------------------------------------------------------------------')
 % input_image = ('Please enter image path: ', 's')
-color_change = lower(input('Please enter a color to change it to black :', 's')); % Get input color and convert it to lower case
+color_change = lower(input('Please enter a color in the above list to change it to black :', 's')); % Get input color and convert it to lower case
 % rgb = imread(input_image)
 rgb = imread("coloredChips.png");
 status = 0; %Normal status
@@ -50,6 +54,7 @@ end
 if status == 0 % Check if the program encounter any error
     % Display the original image
     figure(1)
+    title('Image transformation')
     subplot(1, 2, 1)
     imshow(rgb)
     % Change the color to black
