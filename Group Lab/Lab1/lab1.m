@@ -25,7 +25,7 @@ g = 9.8; % Gravitational velocity in m/s^2
 theta_deg = [35, 45, 55]; % Degrees, define a vector of different angles
 %  at theta = 45 maximum velocity equal 125km/h2
 % Theta 45 is second element in the theta_rad vector
-x_min = 183; % Narrowest disstance at the canyon
+x_min = 183; % Narrowest distance at the canyon
 v0_max = 125; % Maximum velocity in km/h
 
 % Calculate the time to reach the canyon

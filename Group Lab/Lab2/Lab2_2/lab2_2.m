@@ -2,6 +2,7 @@
 % Lab 2 Part 2
 % Author : Nhat Bui(s3878174), Binh Nguyen(s3979462), Thao Trinh (s3979297)
 % This assignment is our team own original work
+% This is the main file of the program
 % Main program start here
 clc, clearvars, close all % Clear all variables, close all matlab figure windows and clear command windows
 
