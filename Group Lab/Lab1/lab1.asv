@@ -47,15 +47,15 @@ y = h_initial + v0_max .* t .* sin(theta_rad)' - 0.5 * g * (t .^ 2); % Formular 
 % Plot the trajectory
 figure(1)
 % Plot all of the three line
-i =1;
-plot(x(i, :), y(i, :)) % Access the first angle
-hold on %Keep the line on the same plot
-i = 2; % Plot the second angle
-plot(x(i, :), y(i, :))
-hold on % Keep the line on the same plot
-i = 3; % Plot the third angle
-plot(x(i, :), y(i, :))
-hold on % Keep the line on the same plot
+ i =1;
+ plot(x(i, :), y(i, :)) % Access the first angle
+ hold on %Keep the line on the same plot
+ i = 2; % Plot the second angle
+ plot(x(i, :), y(i, :))
+ hold on % Keep the line on the same plot
+ i = 3; % Plot the third angle
+ plot(x(i, :), y(i, :))
+ hold on % Keep the line on the same plot
  
 
 % Plot configuration
@@ -71,14 +71,14 @@ a = -0.5 * g; % Identified a of the quadratic equation
 b = v0_max * sin(theta_rad); % identified b of quadratic equation
 c = h_initial; % Identified c of the quadratic equation
 % Solve for t using quadratic formula
-t1 = (-b + sqrt(b.^2 - 4*a*c)) / (2*a); % (-b + sqrt(b^2-4ac) )/2*a the first result
-t2 = (-b - sqrt(b.^2 - 4*a*c)) / (2*a); % (-b - sqrt(b^2-4ac) )/2*a the second result
+t1 = (-b + sqrt(b.^2 - 4*a*c)) / (2*a); % (-b + sqrt(b^2-4ac) )/2 a the first result
+t2 = (-b - sqrt(b.^2 - 4*a*c)) / (2*a);
 
 % Calculate x at intercept points
-x1 = v0_max * cos(theta_rad) .* t1; %Calculated x1 based on t1 and v0_max
-x2 = v0_max * cos(theta_rad) .* t2; %Calculated x2 based on t2 and v0_max
+x1 = v0_max * cos(theta_rad) .* t1; %Calculated x based on 
+x2 = v0_max * cos(theta_rad) .* t2;
 
-% Display the intercept calculation
+% Display results
 display('------------------------------------------')
 display('Calculating the intercept of x when y = 0')
 fprintf('Intercept 1:\n');
@@ -89,7 +89,7 @@ fprintf('Intercept 2:\n');
 fprintf('Theta %d degree, time %.2f second, x value %.2f m\n',theta_deg(1),t2(1),x2(1));
 fprintf('Theta %d degree, time %.2f second, x value %.2f m\n',theta_deg(2),t2(2),x2(2));
 fprintf('Theta %d degree, time %.2f second, x value %.2f m\n',theta_deg(3),t2(3),x2(3));
-%Print out the final answer
+%Print out the answer
 display('------------------------------------------')
 display('Due to the fact that the displacement x value and time must be positive, therefore we choose the following result :')
 fprintf('Theta %d degree, time %.2f second, x value %.2f m\n',theta_deg(1),t2(1),x2(1));
