@@ -10,22 +10,22 @@ end
 clc;
 disp('Converting....')
 switch conversion  % conditonal statement to check every single case
-    case 'f2c'  % convert Fahrenheit to Celsius
+    case 'fah2cel'  % convert Fahrenheit to Celsius
         result = (user_input - 32) * (5/9);
         fprintf('%.2f degrees Fahrenheit is %.2f degrees Celsius\n', user_input, result);
-    case 'in2cm'    % convert inches to cm
+    case 'inch2cm'    % convert inches to cm
         result = user_input * 2.5;
         fprintf('%.2f Inches is %.2f Centimeters\n', user_input, result);
-    case 'ft2m' % convert feet to meter
+    case 'feet2m' % convert feet to meter
         result = user_input * 0.3048;
         fprintf('%.2f Feet is %.2f Meters\n', user_input, result);
-    case 'mi2km'    % convert miles to kilometer
+    case 'miles2km'    % convert miles to kilometer
         result = user_input * 1.609344;
         fprintf('%.2f Miles is %.2f Kilometers\n', user_input, result);
-    case 'oz2g' % convert ounces to gram
+    case 'oz2grams' % convert ounces to gram
         result = user_input * 28.3495;
         fprintf('%.2f Ounces is %.2f Grams\n', user_input, result);
-    case 'lbs2kg'   % convert pounds to kilogram
+    case 'pounds2kg'   % convert pounds to kilogram
         result = user_input * 0.4536;
         fprintf('%.2f Pounds is %.2f Kilograms\n', user_input, result);
     case 'tonne2ton'    % convert tonne to ton

@@ -6,8 +6,9 @@ disp('--------------------------------------------');
 disp('Description: This program can convert the unit of length, weight, and temperature.');
 disp('Instruction: Please enter the unit you want to convert from and to.');
 disp('--------------------------------------------');
+status  = 1; % Normal program status 
 % Main Program Loop
-while(1)
+while(status ~= -4)
     disp('Please enter the direction for conversion');
     % Show the options for conversion direction
     disp('1. From Metric to Imperial');
@@ -62,10 +63,7 @@ while(1)
             continue;
         case 3
             % Exit the program
-            clc;
-            disp('--------------------------------------------');
-            disp('Thank you for using the unit converter!');
-            disp('--------------------------------------------');
+            status = -4;
             break;
         case 1
             disp('--------------------------------------------');
@@ -100,10 +98,7 @@ while(1)
     switch option
         case 4
             % Exit the program
-            clc;
-            disp('--------------------------------------------');
-            disp('Thank you for using the unit converter!');
-            disp('--------------------------------------------');
+            status = -4;
             break;
         case 1
             disp('--------------------------------------------');
@@ -130,21 +125,19 @@ while(1)
             clc;
             continue;
     end
-    % Call the menuhandler function
-    while(1)
+    
+    while(status ~= -4)
         clc
         status = menuhandler(dest, mode);
-        if status == 1 || status == -4
+        disp(status)
+        if status == 1 
             break;
         end
         clc
         disp('--------------------------------------------');
         disp('Please enter your options');
     end
-    if status == -4
-        clc
-        disp('--------------------------------------------');
-        disp('Thank you for using the unit converter!');
-        break;
-    end
 end
+clc
+disp('--------------------------------------------');
+disp('Thank you for using the unit converter!');
