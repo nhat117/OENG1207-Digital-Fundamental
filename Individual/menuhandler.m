@@ -70,11 +70,11 @@ switch mode % Switch case to handle the mode
         end
     case 'weight' % Weight subsection
         if strcmp(dest,'imperial')
-            weightvector = {'kg2pounds','grams2oz','ton2tonne'}; % Create a vector to store the conversion function name
+            weightvector = {'kg2pounds','grams2oz','tonne2ton'}; % Create a vector to store the conversion function name
             % Prompt options for user to choose
             disp('1. Convert from kilograms to pounds');
             disp('2. Convert from grams to ounces');
-            disp('3. Convert from tons to tonnes');
+            disp('3. Convert from tonne (metric) to ton (imperial)');
             disp('-----------------------------------')
             choice = str2double(input('Enter your choice: ','s'));% Ask for user input, use str2double to ensure that the input isnot a empty cells
             clc;
@@ -89,19 +89,18 @@ switch mode % Switch case to handle the mode
                     final_res = convertimperial(result, mode);% Call the convertimperial function
                 case 3
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
-                    disp('Enter the weight in tons: ');
-                    final_res = convertimperial(result, mode);% Call the convertimperial function    
+                    disp('Enter the weight in tonne (metric): ');
+                    final_res = convertimperial(result, mode);% Call the convertimperial function
                 otherwise
                     disp('Unknow choice')
                     status = -1; %error('Unknown choice');
                     return; % Exit the function
             end
         elseif strcmp(dest,'metric')
-            weightvector = {'pounds2kg','oz2grams','tonne2ton'}; % Create a vector to store the conversion function name
-            % Prompt options for user to choose
+            weightvector = {'pounds2kg','oz2grams','ton2tonne'}; % Create a vector to store the conversion function n            % Prompt options for user to choose
             disp('1. Convert from pounds to kilograms');
             disp('2. Convert from ounces to grams');
-            disp('3. Convert from tonnes to tons');
+            disp('3. Convert from ton (imperial) to tonne (metric)');
             disp('-----------------------------------');
             choice = str2double(input('Enter your choice: ','s'));
             clc;
@@ -116,7 +115,7 @@ switch mode % Switch case to handle the mode
                     final_res = convertmetric(result, mode);
                 case 3
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
-                    disp('Enter the weight in tonnes: ');
+                    disp('Enter the weight in ton (imperial): ');
                     final_res = convertmetric(result, mode);
                 otherwise
                     disp('Unknow choice please try again')
@@ -151,15 +150,11 @@ if isnan(final_res)
     return; % Exit the program
 end
 % Display the result
-while(1) % Loop until user press q to quit
-    disp('Pressed any key to continue or q to quit');
-    choice = lower(input('Enter your choice: ','s'));
-    if choice == 'q' % User select quit
-        status = -4; %Quit the program
-        return; % Exit the program
-    else
-        clc
-        break; % Exit the loops
-    end
-end
+disp('Pressed any key to continue or q to quit');
+choice = lower(input('Enter your choice: ','s'));
+if choice == 'q' % User select quit
+    status = -4; %Quit the program
+    return; % Exit the program
+else
+    clc
 end

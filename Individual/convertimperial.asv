@@ -5,15 +5,15 @@
 % The function take in 2 arguments, conversion and mode, the function will output the conversion result
 % User defined function start mode
 function result = convertimperial(conversion, mode)
-user_input = str2double(input('The input should be a number (Positive number for length and mass): ','s'));  % user_input value, use str2double to accept double string input
-disp(user_input)
-if isnan(user_input) || (user_input < 0 && ~strcmp(mode,'temperature')) % Check if the input is not a number or a negative number when being used with length and mass conversion
+user_input = input('The input should be a number (Positive number for length and mass): ','s');  % user_input value, use str2double to accept double string input
+if ~isnumeric(user_input) || (user_input < 0 && ~strcmp(mode,'temperature')) % Check if the input is not a number or a negative number when being used with length and mass conversion
     disp('Invalid input'); % Print out error message
     disp('Please enter a number (positive number for length and mass conversion)');
-    input('Press any key to continue'); % Pause the program
+    input('Press any key to continue or type q to  : ' ,'s'); % Pause the program
     result = NaN; % Return NaN if the input is invalid. Nan means not a number
     return; % Exit the function
 end
+user_input = str2double(user_input);
 clc; % Clear the command window
 disp('Converting....')
 switch conversion % Switch case to perform suitable conversion
@@ -35,9 +35,9 @@ switch conversion % Switch case to perform suitable conversion
     case 'kg2pounds'   % convert kilogram to pounds
         result = user_input / 0.4536; % Formula to convert kilogram to pounds
         fprintf('%.2f Kilograms is equal to %.2f Pounds\n',user_input, result);
-    case 'tonne2ton'    % convert ton to tonne
-        result = user_input / 1.016; % Formula to convert ton to tonne
-        fprintf('%.2f Tonne (Metric) is equal to %.2f Ton (Imperial) \n',user_input, result);
+    case 'ton2tonne'    % convert ton to tonne
+        result = user_input * 1.016; % Formula to convert ton to tonne
+        fprintf('%.2f Ton is equal to %.2f Tonnes\n',user_input, result);
     otherwise
         disp('Invalid conversion'); % Print out error message
         disp('Please enter a valid conversion');

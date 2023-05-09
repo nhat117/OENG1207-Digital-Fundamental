@@ -2,14 +2,16 @@
 % Student: Bui Minh Nhat-s3878174
 % This assignment submission is my own, original work.
 % Convert metric user define function to perform suitable conversion with the destination is the metrics unit.
-% The function take in 1 argumnets conversion to select conversion mode, the function will output the result of the conversion.
+% The function take in 2 argumentn conversion and mode to select conversion mode, the function will output the result of the conversion.
 % User defined function start here
 function result = convertmetric(conversion, mode) % declare user_input and output of function user_input = input('');  % user_input value
-%Check if the user_input is a number or not negative
+%Check if the user_input is a number or not negative (for length and mass conversion)
 user_input = str2double(input('The input should be a number (Positive number for length and mass): ','s'));  % user_input value, use str2double to accept double string input
-if ~isnumeric(user_input) || (user_input < 0 && ~strcmp(mode,'temperature'))% Check if the input is not a number or a negative number when being used with length and mass conversion
+disp(user_input)
+if isnan(user_input) || (user_input < 0 && ~strcmp(mode,'temperature'))% Check if the input is not a number or a negative number when being used with length and mass conversion
     disp('Invalid input'); % Display error message
     disp('Please enter a number (positive number for length and mass conversion)');
+    input('Press any key to continue: ' ,'s'); % Pause the program
     result = NaN;% Return NaN if the input is invalid. Nan means not a number
     return; % Exit the function
 end
@@ -34,9 +36,9 @@ switch conversion  % conditonal statement to check every single case
     case 'pounds2kg'   % convert pounds to kilogram
         result = user_input * 0.4536; %Formular for conversion from pounds to kilogram
         fprintf('%.2f Pounds is %.2f Kilograms\n', user_input, result); % Print out the result
-    case 'tonne2ton'    % convert tonne to ton
-        result = user_input / 1.016; % Formular for conversion from tonne to ton
-        fprintf('%.2f Tonnes is %.2f Tons\n', user_input, result); % Print out the result
+    case 'ton2tonne'    % convert tonne to ton
+        result = user_input * 1.016; % Formular for conversion from tonne to ton
+        fprintf('%.2f Ton (imperial) is %.2f Tonne (Metric) \n', user_input, result); % Print out the result
     otherwise
         disp('Invalid conversion');% Print out error message
         disp('Please enter a valid conversion');
