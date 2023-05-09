@@ -7,7 +7,6 @@
 function result = convertmetric(conversion, mode) % declare user_input and output of function user_input = input('');  % user_input value
 %Check if the user_input is a number or not negative (for length and mass conversion)
 user_input = str2double(input('The input should be a number (Positive number for length and mass): ','s'));  % user_input value, use str2double to accept double string input
-disp(user_input)
 if isnan(user_input) || (user_input < 0 && ~strcmp(mode,'temperature'))% Check if the input is not a number or a negative number when being used with length and mass conversion
     disp('Invalid input'); % Display error message
     disp('Please enter a number (positive number for length and mass conversion)');
