@@ -4,12 +4,12 @@
 % Convert metric user define function to perform suitable conversion with the destination is the metrics unit.
 % The function take in 1 argumnets conversion to select conversion mode, the function will output the result of the conversion.
 % User defined function start here
-function result = convertmetric(conversion) % declare user_input and output of function user_input = input('');  % user_input value
+function result = convertmetric(conversion, mode) % declare user_input and output of function user_input = input('');  % user_input value
 %Check if the user_input is a number or not negative
-user_input = str2double(input('The input should be a positive number: ','s'));  % user_input value, use str2double to accept double string input
-if ~isnumeric(user_input) || user_input < 0 % Check if the input is not a number or a negative
+user_input = str2double(input('The input should be a number (Positive number for length and mass): ','s'));  % user_input value, use str2double to accept double string input
+if ~isnumeric(user_input) || (user_input < 0 && ~strcmp(mode,'temperature'))% Check if the input is not a number or a negative number when being used with length and mass conversion
     disp('Invalid input'); % Display error message
-    disp('Please enter a positive number');
+    disp('Please enter a number (positive number for length and mass conversion)');
     result = NaN;% Return NaN if the input is invalid. Nan means not a number
     return; % Exit the function
 end
@@ -39,7 +39,7 @@ switch conversion  % conditonal statement to check every single case
         fprintf('%.2f Tonnes is %.2f Tons\n', user_input, result); % Print out the result
     otherwise
         disp('Invalid conversion');% Print out error message
-        disp('Please enter a valid conversion'); 
+        disp('Please enter a valid conversion');
         result = NaN; % Return NaN if the input is invalid. Nan means not a number
 end % End of switch case
 end % End of function

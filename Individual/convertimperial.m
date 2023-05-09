@@ -4,11 +4,11 @@
 % convertimperial user define function user to perform suitable conversion 
 % The function take in 1 arguments, conversion, the function will output the conversion result
 % User defined function start here
-function result = convertimperial(conversion)
-user_input = str2double(input('The input should be a positive number: ','s'));  % user_input value, use str2double to accept double string input
-if ~isnumeric(user_input) || user_input < 0 % Check if the input is not a number or a negative
+function result = convertimperial(conversion, mode)
+user_input = str2double(input('The input should be a number (Positive number for length and mass): ','s'));  % user_input value, use str2double to accept double string input
+if ~isnumeric(user_input) || (user_input < 0 && ~strcmp(mode,'temperature')) % Check if the input is not a number or a negative number when being used with length and mass conversion
     disp('Invalid input'); % Print out error message
-    disp('Please enter a positive number');
+    disp('Please enter a number (positive number for length and mass conversion)');
     result = NaN; % Return NaN if the input is invalid. Nan means not a number
     return; % Exit the function
 end

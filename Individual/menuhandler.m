@@ -22,15 +22,15 @@ switch mode % Switch case to handle the mode
                 case 1
                     result = char(lengthvector(choice)); % Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the length in centimeters: ');
-                    final_res = convertimperial(result); % Call the convertimperial function
+                    final_res = convertimperial(result, mode); % Call the convertimperial function
                 case 2
                     result = char(lengthvector(choice)); % Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the length in meters: ');
-                    final_res = convertimperial(result); % Call the convertimperial function
+                    final_res = convertimperial(result, mode); % Call the convertimperial function
                 case 3
                     result = char(lengthvector(choice)); % Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the length in kilometers: ');
-                    final_res = convertimperial(result); % Call the convertimperial function
+                    final_res = convertimperial(result, mode); % Call the convertimperial function
                 otherwise
                     disp('Unknow choice please try again')
                     status = -1; %error('Unknown choice');
@@ -49,15 +49,15 @@ switch mode % Switch case to handle the mode
                 case 1
                     result = char(lengthvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the length in inches: ');
-                    final_res = convertmetric(result);% Call convertmetrics functions
+                    final_res = convertmetric(result, mode);% Call convertmetrics functions
                 case 2
                     result = char(lengthvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the length in feet: ')
-                    final_res = convertmetric(result);% Call convertmetrics functions
+                    final_res = convertmetric(result, mode);% Call convertmetrics functions
                 case 3
                     result = char(lengthvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the length in miles: ');
-                    final_res = convertmetric(result);% Call convertmetrics functions
+                    final_res = convertmetric(result, mode);% Call convertmetrics functions
                 otherwise
                     disp('Unknow choice please try again')
                     status = -1; %error('Unknown choice');
@@ -82,15 +82,15 @@ switch mode % Switch case to handle the mode
                 case 1
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the weight in kilograms: ');
-                    final_res = convertimperial(result);% Call the convertimperial function
+                    final_res = convertimperial(result, mode);% Call the convertimperial function
                 case 2
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the weight in grams:')
-                    final_res = convertimperial(result);% Call the convertimperial function
+                    final_res = convertimperial(result, mode);% Call the convertimperial function
                 case 3
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the weight in tons: ');
-                    final_res = convertimperial(result);% Call the convertimperial function    
+                    final_res = convertimperial(result, mode);% Call the convertimperial function    
                 otherwise
                     disp('Unknow choice')
                     status = -1; %error('Unknown choice');
@@ -109,15 +109,15 @@ switch mode % Switch case to handle the mode
                 case 1
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the weight in pounds: ');
-                    final_res = convertmetric(result);
+                    final_res = convertmetric(result, mode);
                 case 2
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the weight in ounces: ');
-                    final_res = convertmetric(result);
+                    final_res = convertmetric(result, mode);
                 case 3
                     result = char(weightvector(choice));% Select the corresponding user choice, char function needs to access the chars store in the cells
                     disp('Enter the weight in tonnes: ');
-                    final_res = convertmetric(result);
+                    final_res = convertmetric(result, mode);
                 otherwise
                     disp('Unknow choice please try again')
                     status = -1; %error('Unknown choice');
@@ -131,10 +131,10 @@ switch mode % Switch case to handle the mode
     case 'temperature' % Temperature subsection
         if strcmp(dest,'imperial')
             disp('Convert from Celsius to Fahrenheit');
-            final_res = convertimperial('cel2fah');
+            final_res = convertimperial('cel2fah', mode);
         elseif strcmp(dest,'metric')
             disp('Convert from Fahrenheit to Celsius');
-            final_res = convertmetric('fah2cel');
+            final_res = convertmetric('fah2cel', mode);
         else
             disp('Unknow choice')
             status = -1; %error('Unknown choice');
