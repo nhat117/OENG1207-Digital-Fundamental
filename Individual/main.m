@@ -7,6 +7,7 @@ clc, clearvars, close all
 status  = 1; % Normal program status
 % Main Program Loop
 while(status ~= -4)
+    clc; % Clear display
     %Display program title and quick start guide
     disp('-------------------Welcome---------------------');
     disp('Welcome to the unit converter!');
@@ -16,7 +17,8 @@ while(status ~= -4)
     disp('Description: This program can convert the unit of length, weight, and temperature.');
     disp('---------------Instruction------------------');
     disp ('Please enter the unit you want to convert from and to, then enter the value you want to convert.');
-    disp('To quit the program while executing, press ctrl+c or stop button or follow on screen instruction')
+    disp('The program have the accuracy of to decimal points.');
+    disp('To quit the program while executing, press ctrl+c or stop button or follow on screen instruction.')
     disp('--------------------------------------------');
     disp('Please Select the target unit for conversion');
     % Show the options for conversion direction
