@@ -7,9 +7,14 @@
 function result = convertmetric(conversion, mode) % declare user_input and output of function user_input = input('');  % user_input value
 %Check if the user_input is a number or not negative (for length and mass conversion)
 user_input = str2double(input('The input should be a number (Positive number for length and mass): ','s'));  % user_input value, use str2double to accept double string input
-if isnan(user_input) || (user_input < 0 && ~strcmp(mode,'temperature'))% Check if the input is not a number or a negative number when being used with length and mass conversion
+if isnan(user_input) % Check if the input is not a number or a negative number when being used with length and mass conversion
     disp('Invalid input'); % Display error message
-    disp('Please enter a number (positive number for length and mass conversion)');
+    disp('Please enter a number');
+    input('Press any key to continue: ' ,'s'); % Pause the program
+    result = NaN;% Return NaN if the input is invalid. Nan means not a number
+    return; % Exit the function
+elseif (user_input < 0 && ~strcmp(mode,'temperature'))
+    disp('Please enter a positive number for length and weight conversion')
     input('Press any key to continue: ' ,'s'); % Pause the program
     result = NaN;% Return NaN if the input is invalid. Nan means not a number
     return; % Exit the function
@@ -41,6 +46,7 @@ switch conversion  % conditonal statement to check every single case
     otherwise
         disp('Invalid conversion');% Print out error message
         disp('Please enter a valid conversion');
+        input('Press any button to try again'); % Ask user to press any button to try again
         result = NaN; % Return NaN if the input is invalid. Nan means not a number
 end % End of switch case
 end % End of function

@@ -60,7 +60,7 @@ while(status ~= -4)
             disp('To convert mass from ton(met)-> ton(imp) run the ton(met)-> ton(imp) section');
             disp('To convert mass from ton(imp)-> ton(met) run the ton(imp)-> ton(met) section');
             while(1) % Loop until user type anything
-                disp('Type anything to go back to the main menu'); % Ask user to type anything to go back to the main menu
+                disp('Press enter to go back to the main menu'); % Ask user to type anything to go back to the main menu
                 help = input('', 's');
                 break; % Break the loop
             end
@@ -82,9 +82,11 @@ while(status ~= -4)
             dest = 'metric'; % Set the destination to metric
             clc; % Clear the screen
         otherwise % If user select invalid option
+            clc;
             disp('--------------------------------------------');
             disp('Invalid option, please try again');
             disp('--------------------------------------------');
+            input('Press enter to try again')
             clc; % Clear the screen
             continue; % Skip the rest of the loop and continue the program
     end
@@ -123,9 +125,11 @@ while(status ~= -4)
             mode = 'temperature'; %Set the mode to temperature
             clc; % Clear the screen
         otherwise
+            clc;
             disp('--------------------------------------------');
             disp('Invalid option, please try again');
             disp('--------------------------------------------');
+            input('Press enter button to try again'); % Ask user to press any button to try again
             clc; %Clear the screen and continue the program
             continue; % Skip the rest of the loop and continue the program
     end %End of the switch statement

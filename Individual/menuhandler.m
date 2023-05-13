@@ -32,7 +32,9 @@ switch mode % Switch case to handle the mode
                     disp('Enter the length in kilometers: ');
                     final_res = convertimperial(result, mode); % Call the convertimperial function
                 otherwise
+                    clc
                     disp('Unknow choice please try again')
+                    input('Press enter to continue')
                     status = -1; %error('Unknown choice');
                     return;
             end
@@ -59,12 +61,16 @@ switch mode % Switch case to handle the mode
                     disp('Enter the length in miles: ');
                     final_res = convertmetric(result, mode);% Call convertmetrics functions
                 otherwise
+                    clc
                     disp('Unknow choice please try again')
                     status = -1; %error('Unknown choice');
+                    input('Press enter to continue')
                     return; %Exit the function
             end
         else
+            clc
             disp('Unknow choice')
+            input('Press enter to continue')
             status = -1; %error('Unknown choice');
             return;
         end
@@ -92,7 +98,9 @@ switch mode % Switch case to handle the mode
                     disp('Enter the weight in tonne (metric): ');
                     final_res = convertimperial(result, mode);% Call the convertimperial function
                 otherwise
+                    clc
                     disp('Unknow choice')
+                    input('Press enter to continue')
                     status = -1; %error('Unknown choice');
                     return; % Exit the function
             end
@@ -118,13 +126,17 @@ switch mode % Switch case to handle the mode
                     disp('Enter the weight in ton (imperial): ');
                     final_res = convertmetric(result, mode);
                 otherwise
+                    clc
                     disp('Unknow choice please try again')
+                    input('Press enter to continue'); % Ask user to press any button to try again
                     status = -1; %error('Unknown choice');
                     return; % Exit the program
             end
         else
+            clc
             disp('Unknow choice please try again')
             status = -1; %error('Unknown choice');
+            input('Press enter button to continue'); % Ask user to press any button to try again
             return; % Exit the program
         end
     case 'temperature' % Temperature subsection
@@ -135,17 +147,22 @@ switch mode % Switch case to handle the mode
             disp('Convert from Fahrenheit to Celsius');
             final_res = convertmetric('fah2cel', mode);
         else
+            clc
             disp('Unknow choice')
+            input('Press enter button to continue'); % Ask user to press any button to try again
             status = -1; %error('Unknown choice');
             return; % Exit the program
         end
     otherwise
+        clc
         disp('Unknow mode')
+        input('Press enter button to continue'); % Ask user to press any button to try again
         status = -2; %error('Unknown mode');
         return; % Exit the program
 end
 % Check if the conversion is success
 if isnan(final_res)
+    % input('Press enter button to continue'); % Ask user to press any button to try again
     status = -3; %error('Invalid input');
     return; % Exit the program
 end

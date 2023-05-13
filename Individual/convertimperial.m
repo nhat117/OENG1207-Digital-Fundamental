@@ -6,11 +6,16 @@
 % User defined function start mode
 function result = convertimperial(conversion, mode)
 user_input = str2double(input('The input should be a number (Positive number for length and mass): ','s'));  % user_input value, use str2double to accept double string input
-if isnan(user_input) || (user_input < 0 && ~strcmp(mode,'temperature')) % Check if the input is not a number or a negative number when being used with length and mass conversion
-    disp('Invalid input'); % Print out error message
-    disp('Please enter a number (positive number for length and mass conversion)');
-    input('Press any key to continue'); % Pause the program
-    result = NaN; % Return NaN if the input is invalid. Nan means not a number
+if isnan(user_input) % Check if the input is not a number or a negative number when being used with length and mass conversion
+    disp('Invalid input'); % Display error message
+    disp('Please enter a number');
+    input('Press any key to continue: ' ,'s'); % Pause the program
+    result = NaN;% Return NaN if the input is invalid. Nan means not a number
+    return; % Exit the function
+elseif (user_input < 0 && ~strcmp(mode,'temperature'))
+    disp('Please enter a positive number for length and weight conversion')
+    input('Press any key to continue: ' ,'s'); % Pause the program
+    result = NaN;% Return NaN if the input is invalid. Nan means not a number
     return; % Exit the function
 end
 clc; % Clear the command window
@@ -40,6 +45,7 @@ switch conversion % Switch case to perform suitable conversion
     otherwise
         disp('Invalid conversion'); % Print out error message
         disp('Please enter a valid conversion');
+        input('Press any button to try again'); % Ask user to press any button to try again
         result = NaN; % Return NaN if the input is invalid. Nan means not a number
 end % End of switch case
 end % End of function
